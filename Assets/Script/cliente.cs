@@ -42,6 +42,9 @@ public class cliente : Convert_vector
     // Start is called before the first frame update
     void Start()
     {
+
+        Screen.SetResolution(1200, 700, false);
+
         verificar_file_json();
 
 
