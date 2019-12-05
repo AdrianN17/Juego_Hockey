@@ -219,6 +219,7 @@ public class servidor : Convert_vector
 
     private void OnDestroy()
     {
+        Timer.CancelAllRegisteredTimers();
         server.Destroy();
     }
 
