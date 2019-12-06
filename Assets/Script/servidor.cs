@@ -154,7 +154,7 @@ public class servidor : Convert_vector
 
         if(disco.transform.position.y<0)
         {
-            disco.transform.position = disco_pos;
+            restablecer_posicion_disco();
         }
 
 
@@ -191,7 +191,7 @@ public class servidor : Convert_vector
            
             var distancia = FlatDistance(personaje_pos, mouse_pos);
 
-            if (distancia > 0.5)
+            if (distancia > 1)
             {
                 var dt = Time.deltaTime;
                 var vec = mi_jugador.GetComponent<Collider>().bounds.center;
@@ -215,6 +215,11 @@ public class servidor : Convert_vector
         pos1.y = pos1.z;
         pos2.y = pos2.z;
         return Vector2.Distance(pos1, pos2);
+    }
+
+    public void restablecer_posicion_disco()
+    {
+        disco.transform.position = disco_pos;
     }
 
     private void OnDestroy()

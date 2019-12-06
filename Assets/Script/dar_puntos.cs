@@ -23,6 +23,7 @@ public class dar_puntos : MonoBehaviour
         if(other.gameObject.layer == LayerMask.NameToLayer("Disco"))
         {
             server.guardar_puntuacion(id_parte);
+            server.restablecer_posicion_disco();
 
         }
     }
