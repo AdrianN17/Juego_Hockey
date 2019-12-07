@@ -26,6 +26,8 @@ public class servidor : Convert_vector
     public int channels;
     public int timeout;
 
+    private Vector3 jugador_1_pos;
+    private Vector3 jugador_2_pos;
     private Vector3 disco_pos;
 
     public List<int> puntuaciones;
@@ -40,6 +42,9 @@ public class servidor : Convert_vector
     void Start()
     {
         verificar_file_json();
+
+        jugador_1_pos = jugador_1.transform.position;
+        jugador_2_pos = jugador_2.transform.position;
 
         puntuaciones = new List<int>();
         puntuaciones.Add(0);
@@ -68,7 +73,12 @@ public class servidor : Convert_vector
 
             if(server.GetListClientsCount()==2)
             {
+                jugador_1.transform.position = jugador_1_pos;
+                jugador_2.transform.position = jugador_2_pos;
+                disco.transform.position = disco_pos;
+
                 server.SendToAll("iniciar_juego", null);
+
             }
         });
 
@@ -157,6 +167,10 @@ public class servidor : Convert_vector
             restablecer_posicion_disco();
         }
 
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
         server.update();
     }

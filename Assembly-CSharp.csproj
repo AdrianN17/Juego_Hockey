@@ -90,6 +90,7 @@
     <Compile Include="Assets\Script\Modelos_ESharkNet\data_mouse_pos.cs" />
     <Compile Include="Assets\Script\Modelos_ESharkNet\data_personaje.cs" />
     <Compile Include="Assets\Script\Modelos_ESharkNet\data_puntuacion.cs" />
+    <Compile Include="Assets\Script\rebote.cs" />
     <Compile Include="Assets\Script\servidor.cs" />
     <Compile Include="Assets\Timer\Example\TestTimerBehaviour.cs" />
     <Compile Include="Assets\Timer\Source\Timer.cs" />

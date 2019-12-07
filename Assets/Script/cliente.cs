@@ -154,10 +154,19 @@ public class cliente : Convert_vector
             ip = conf.ip;
             port = conf.port;
         }
+        else
+        {
+            ip = new LocalIP().SetLocalIP();
+        }
     }
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         client.update();
     }
 
